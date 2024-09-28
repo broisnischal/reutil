@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: pnpm/action-setup@v4
         with:
@@ -40,10 +42,23 @@ jobs:
           publish: pnpm run release
           cwd: ./packages/reutil
 
+      - name: Git config
+        if: steps.changesets.outputs.published == 'true'
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+
+      - name: Commit changes
+        if: steps.changesets.outputs.published == 'true'
+        run: |
+          git add .
+          git commit -m "chore: update version and changelog"
+          git push
+
       - name: Publish to npmjs
         if: steps.changesets.outputs.published == 'true'
         run: |
           cd packages/reutil
-          pnpm publish --access public --tag latest
+          pnpm publish --access public --tag latest --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
