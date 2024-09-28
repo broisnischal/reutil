@@ -1,12 +1,3 @@
----
-title: "WithProps"
----
-
-# WithProps
-
-Inject additional props into a child component.
-
-```tsx
 import React, { useContext } from "react";
 
 const PropsContext = React.createContext<any>(null);
@@ -31,12 +22,3 @@ export const WithProps = <T,>({ children, ...props }: IWithPropsProps<T>) => {
     </PropsContext.Provider>
   );
 };
-```
-
-## Usage
-
-```
-<WithProps props={{ name: "John" }}>
-  {(props) => <div>{props.name}</div>}
-</WithProps>
-```

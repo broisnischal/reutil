@@ -1,0 +1,11 @@
+src
+.changeset
+.DS_Store
+.github
+.vscode
+pnpm-lock.yaml
+tsconfig.json
+vite.config.ts
+test
+node_modules
+pnpm-lock.yaml
