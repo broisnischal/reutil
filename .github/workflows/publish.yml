@@ -21,10 +21,10 @@ jobs:
         with:
           node-version: 20
           cache: "pnpm"
-      - run: pnpm install --frozen-lockfile
-      # Change working directory to packages/reutil
+        # Change working directory to packages/reutil
       - name: Change to package directory
         run: cd packages/reutil
+      - run: pnpm install --frozen-lockfile
       - name: Create Pull request or publish
         id: changesets
         uses: changesets/action@v1
