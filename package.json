@@ -1,0 +1,14 @@
+{
+  "name": "react-utilities",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "malta dev",
+    "build": "malta build",
+    "preview": "malta preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

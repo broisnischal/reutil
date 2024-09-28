@@ -1,0 +1,41 @@
+{
+  "name": "react-utilities",
+  "description": "A comprehensive guide to essential React patterns and utility components, including Show, Fetch, Loading, Switch, and more. Explore practical implementations and best practices for building efficient React applications.",
+  "domain": "https://reactpatterns.com",
+  "twitter": "@broisnees",
+  "sidebar": [
+    {
+      "title": "Utilities",
+      "pages": [
+        ["Show", "/content/react-show"],
+        ["For", "/content/for"],
+        ["Fetch", "/content/fetch"],
+        ["Loading", "/content/loading"],
+        ["Switch", "/content/switch"],
+        ["Toggle", "/content/toggle"],
+        ["Lazyload", "/content/lazyload"],
+        ["Defer", "/content/defer"],
+        ["Portal", "/content/portal"],
+        ["Repeat", "/content/repeat"],
+        ["Choose", "/content/choose"],
+        ["With", "/content/with"],
+        ["Unless", "/content/unless"],
+        ["Maybe", "/content/maybe"],
+        ["WithState", "/content/withstate"],
+        ["Fallback", "/content/fallback"],
+        ["TryCatch", "/content/trycatch"],
+        ["WithProps", "/content/withprops"]
+      ]
+    },
+    {
+      "title": "Links",
+      "pages": [
+        ["CONTRIBUTING", "/contributing"],
+        ["Github", "https://github.com/broisnees/react-utilities"],
+        ["React Patterns", "https://reactpatterns.com"],
+        ["Nischal Dahal", "https://nischal-dahal.com.np"]
+      ]
+    }
+  ],
+  "asset_hashing": true
+}

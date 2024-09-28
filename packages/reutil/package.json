@@ -1,0 +1,45 @@
+{
+  "name": "reutil",
+  "version": "0.0.1",
+  "description": "A collection of essential React patterns and utility components.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc",
+    "test": "vitest run",
+    "release": "pnpm run lint && pnpm run test && pnpm run build && changeset publish",
+    "changelog": "changeset changelog",
+    "patch": "pnpm run release --patch",
+    "minor": "pnpm run release --minor",
+    "major": "pnpm run release --major",
+    "prepack": "pnpm run lint && pnpm run build",
+    "vscode:prepublish": "pnpm run build",
+    "cs": "pnpm changeset",
+    "watch": "pnpm run build --watch",
+    "link": "pnpm link --global remix-zod-validator",
+    "unlink": "pnpm unlink --global remix-zod-validator",
+    "link-cli": "pnpm run unlink && pnpm run link"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.8",
+    "tsup": "^8.2.4",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.1",
+    "@sinclair/typebox": "0.33.12"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "peerDependencies": {
+    "zod": "^3.23.8",
+    "@remix-run/react": "^2.1.1",
+    "@remix-run/server-runtime": "^2.1.1"
+  },
+  "author": {
+    "name": "Nischal",
+    "url": "https://github.com/broisnischal/prisma-fns",
+    "email": "neeswebservice@gmail.com"
+  }
+}
