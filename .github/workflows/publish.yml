@@ -25,7 +25,10 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: |
+          pnpm install --frozen-lockfile
+          cd packages/reutil
+          pnpm add -D @changesets/cli
 
       - name: Create Pull request or publish
         id: changesets
