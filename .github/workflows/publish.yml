@@ -44,6 +44,6 @@ jobs:
         if: steps.changesets.outputs.published == 'true'
         run: |
           cd packages/reutil
-          pnpm publish --access public
+          pnpm publish --access public --tag latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
