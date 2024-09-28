@@ -19,6 +19,6 @@ React Utilities provides a set of powerful, reusable components and patterns tha
 - Utilize optimized components
 - Use declarative patterns
 
-## Contributing
+## Installation
 
-We're excited that you're interested in contributing to React Utilities! This document will guide you through the process of adding new components or improving existing ones. Checkout [CONTRIBUTING.md](/contributing) for more information.
+To start using React Utilities in your project, you can install it via npm:

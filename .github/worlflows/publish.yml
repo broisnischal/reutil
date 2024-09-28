@@ -1,39 +1,40 @@
-name: Publish docs
+name: Publish
 
 on:
   push:
     branches:
       - main
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
-      - name: setup actions
-        uses: actions/checkout@v3
-      - name: install malta
-        run: |
-          curl -o malta.tgz -L https://github.com/pilcrowonpaper/malta/releases/latest/download/linux-amd64.tgz
-          tar -xvzf malta.tgz
-      - name: build
-        run: ./linux-amd64/malta build
-      - name: upload pages artifact
-        uses: actions/upload-pages-artifact@v1
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
         with:
-          path: dist
+          version: 9.x
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+      - run: pnpm install --frozen-lockfile
+        # - run: pnpm run lint && pnpm run build
+        # - run: pnpm run release
+      - name: Create Pull request or publish
+        id: changesets
+        uses: changesets/action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          publish: pnpm run release
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+      - name: Publish to npmjs
+        if: steps.changesets.outputs.published == 'true'
+        run: pnpm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

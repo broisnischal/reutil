@@ -6,15 +6,16 @@ We're excited that you're interested in contributing to React Utilities! This do
 
 1. Fork the repository on GitHub.
 2. Clone your forked repository to your local machine.
-3. Install dependencies with `npm install`.
-4. Create a new branch for your feature or bug fix.
+3. Navigate to the `packages/reutil` directory.
+4. Install dependencies with `npm install`.
+5. Create a new branch for your feature or bug fix.
 
 ## Adding a New Utility Component
 
-1. Create a new file in the appropriate directory (e.g., `src/components/NewUtility.tsx`).
+1. Create a new file in the appropriate directory (e.g., `packages/reutil/src/components/NewUtility.tsx`).
 2. Implement your utility component, following the existing code style and best practices.
-3. Add tests for your component in the `tests` directory.
-4. Update the main export file to include your new component.
+3. Add tests for your component in the `packages/reutil/tests` directory.
+4. Update the main export file (`packages/reutil/src/index.ts`) to include your new component.
 5. Create a documentation file in `pages/content/new-utility.md`.
 
 ## Documentation Guidelines
@@ -29,7 +30,7 @@ When creating or updating documentation:
 ## Pull Request Process
 
 1. Ensure your code follows the project's coding standards and passes all tests.
-2. Update the README.md with details of your changes, if applicable.
+2. Update the README.md in `packages/reutil` with details of your changes, if applicable.
 3. Create a pull request with a clear title and description of your changes.
 4. Wait for a maintainer to review your pull request. Address any feedback or questions they may have.
 
