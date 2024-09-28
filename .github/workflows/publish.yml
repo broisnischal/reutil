@@ -14,17 +14,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: pnpm/action-setup@v4
         with:
           version: 9.x
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: "pnpm"
-        # Change working directory to packages/reutil
-      - name: Change to package directory
-        run: cd packages/reutil
-      - run: pnpm install --frozen-lockfile
+
+      - name: Install dependencies
+        working-directory: ./packages/reutil
+        run: pnpm install --frozen-lockfile
+
       - name: Create Pull request or publish
         id: changesets
         uses: changesets/action@v1
@@ -33,12 +36,10 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           publish: pnpm run release
-          # Specify the correct working directory for changesets
           cwd: ./packages/reutil
 
       - name: Publish to npmjs
         if: steps.changesets.outputs.published == 'true'
-        # Ensure we're in the correct directory for publishing
         working-directory: ./packages/reutil
         run: pnpm publish --access public
         env:
