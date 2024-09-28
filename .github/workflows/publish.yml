@@ -22,8 +22,9 @@ jobs:
           node-version: 20
           cache: "pnpm"
       - run: pnpm install --frozen-lockfile
-        # - run: pnpm run lint && pnpm run build
-        # - run: pnpm run release
+      # Change working directory to packages/reutil
+      - name: Change to package directory
+        run: cd packages/reutil
       - name: Create Pull request or publish
         id: changesets
         uses: changesets/action@v1
@@ -32,9 +33,13 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           publish: pnpm run release
+          # Specify the correct working directory for changesets
+          cwd: ./packages/reutil
 
       - name: Publish to npmjs
         if: steps.changesets.outputs.published == 'true'
+        # Ensure we're in the correct directory for publishing
+        working-directory: ./packages/reutil
         run: pnpm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

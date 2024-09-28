@@ -40,5 +40,21 @@ function Some({ items, condition, children }) {
   return items.some(condition) ? /* @__PURE__ */ import_react.default.createElement(import_react.default.Fragment, null, children) : null;
 }
 
+// src/utils/any.tsx
+var import_react2 = __toESM(require("react"));
+function Any({ items, condition, children }) {
+  return /* @__PURE__ */ import_react2.default.createElement(import_react2.default.Fragment, null, items.filter(condition).map(children));
+}
+
+// src/utils/include.tsx
+var import_react3 = __toESM(require("react"));
+function Include({
+  items,
+  values,
+  children
+}) {
+  return /* @__PURE__ */ import_react3.default.createElement(import_react3.default.Fragment, null, items.filter((item) => values.includes(item)).map(children));
+}
+
 // src/index.ts
-var src_default = { Some };
+var src_default = { Some, Any, Include };
