@@ -1,6 +1,6 @@
 {
   "name": "reutil",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A collection of essential React patterns and utility components.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
