@@ -8,6 +8,12 @@ A collection of essential React patterns and utility components.
 npm install reutil
 ```
 
+## Components
+
+### Some
+
+The `Some` component is a utility for conditionally rendering content based on an array of items and a condition.
+
 ## Usage
 
 ```tsx
