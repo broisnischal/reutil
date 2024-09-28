@@ -35,9 +35,12 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           publish: pnpm run release
+          cwd: ./packages/reutil
 
       - name: Publish to npmjs
         if: steps.changesets.outputs.published == 'true'
-        run: pnpm publish --access public
+        run: |
+          cd packages/reutil
+          pnpm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
