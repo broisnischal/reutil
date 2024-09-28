@@ -1,5 +1,5 @@
 ---
-title: Contributing to React Utilities
+title: Contributing to Reutil
 ---
 
 # Contributing
