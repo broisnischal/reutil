@@ -2,10 +2,6 @@
 
 A collection of essential React patterns and utility components.
 
-## Package Structure
-
-This project is structured as a monorepo, with the main package located in `packages/reutil`.
-
 ## Installation
 
 To use React Utilities in your project, install it via npm:
@@ -30,12 +26,12 @@ export default function App() {
 }
 ```
 
-## Components
+Checkout [DOCS](https://reutil.netlify.app) for more details.
 
-### Show
+## Contributing
 
-### For
+Checkout [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 
-### Fetch
+## License
 
-### Loading
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
