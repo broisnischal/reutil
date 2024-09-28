@@ -1,6 +1,10 @@
 ---
-title: "Switch"
+title: "Switch - Reutil"
 ---
+
+# Switch
+
+Switch is a utility component that renders its children only if the condition is true.
 
 ```tsx
 interface ISwitchProps<T> {

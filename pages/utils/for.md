@@ -1,8 +1,10 @@
 ---
-title: "React For"
+title: "For - Reutil"
 ---
 
-## React For
+# For
+
+For is a utility component that renders its children for each item in an array.
 
 ```tsx
 import React from "react";

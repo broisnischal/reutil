@@ -1,8 +1,10 @@
 ---
-title: "Fallback"
+title: "Fallback - Reutil"
 ---
 
 # Fallback
+
+Fallback is the component that allows you to render a component only if a value is not `null` or `undefined`.
 
 ```tsx
 interface FallbackProps {

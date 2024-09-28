@@ -1,8 +1,10 @@
 ---
-title: "WithState"
+title: "WithState - Reutil"
 ---
 
-# WithState
+# With State
+
+With State is the component that allows you to pass a value to a component.
 
 ```tsx
 interface IWithStateProps<T> {

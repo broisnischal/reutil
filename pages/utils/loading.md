@@ -1,6 +1,10 @@
 ---
-title: Loading
+title: Loading - Reutil
 ---
+
+# Loading
+
+Loading is a utility component that renders its children only if the condition is true.
 
 ```tsx
 interface LoadingProps {

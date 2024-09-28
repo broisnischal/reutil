@@ -1,6 +1,11 @@
 ---
-title: Toggle
+title: Toggle - Reutil
+description: Toggle is a utility component that renders its children only if the condition is true.
 ---
+
+# Toggle
+
+Toggle is a utility component that renders its children only if the condition is true.
 
 ```tsx
 interface IToggleProps<T> {

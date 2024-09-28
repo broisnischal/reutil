@@ -4,6 +4,8 @@ title: Lazyload
 
 # Lazyload
 
+Lazyload is the component that allows you to lazy load a component.
+
 ```tsx
 import React, { lazy, Suspense, ComponentType } from "react";
 

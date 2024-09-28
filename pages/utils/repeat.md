@@ -1,6 +1,10 @@
 ---
-title: Repeat
+title: Repeat - Reutil
 ---
+
+# Repeat
+
+Repeat is the component that allows you to repeat a component a given number of times.
 
 ```tsx
 interface IRepeatProps {

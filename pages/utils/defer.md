@@ -2,6 +2,10 @@
 title: "Defer"
 ---
 
+# Defer
+
+Defer is the component that allows you to defer the rendering of a component.
+
 ```tsx
 import React, { useEffect, useState } from "react";
 

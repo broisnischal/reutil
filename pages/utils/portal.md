@@ -2,6 +2,10 @@
 title: "Portal"
 ---
 
+# Portal
+
+Portal is the component that allows you to render a component outside the main DOM tree.
+
 ```tsx
 import { createPortal } from "react-dom";
 

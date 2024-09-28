@@ -1,7 +1,10 @@
 ---
-title: "Choose"
-# date: "2021-01-01"
+title: "Choose - Reutil"
 ---
+
+# Choose
+
+Choose is the component that allows you to choose a component to render based on a condition.
 
 ```tsx
 interface IChooseProps {
