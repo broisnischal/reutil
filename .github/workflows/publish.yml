@@ -24,6 +24,10 @@ jobs:
           node-version: 20
           cache: "pnpm"
 
+      # Set working directory globally for the remaining steps to be ./packages/reutil
+      - name: Set working directory
+        run: echo "Working in ./packages/reutil"
+
       - name: Install dependencies
         working-directory: ./packages/reutil
         run: pnpm install --frozen-lockfile
