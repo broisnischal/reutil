@@ -74,4 +74,4 @@ If you'd like to contribute, please follow our [contribution](https://reutil.net
 
 ### License
 
-reutil is open-source software licensed under the MIT license.
+reutil is open-source software licensed under the [MIT license](https://github.com/broisnischal/reutil/blob/main/LICENSE).

@@ -9,3 +9,4 @@ vite.config.ts
 test
 node_modules
 pnpm-lock.yaml
+LICENSE
