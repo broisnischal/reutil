@@ -20,6 +20,7 @@ import { TryCatch } from "./utils/trycatch";
 import { Unless } from "./utils/unless";
 import { With } from "./utils/with";
 import { WithState } from "./utils/withstate";
+import { useLazyLoad } from "./hooks/useLazyLoad";
 
 export {
   Some,
@@ -45,4 +46,5 @@ export {
   useDebounce,
   useThrottle,
   WithProps,
+  useLazyLoad,
 };
